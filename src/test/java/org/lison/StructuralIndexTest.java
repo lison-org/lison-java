@@ -12,9 +12,9 @@ import static org.junit.Assert.assertEquals;
 public class StructuralIndexTest {
     @Test
     public void buildStructuralCharacterBitmaps() throws UnsupportedEncodingException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        String jsonRecordString = "{\"id\":\"id:\\\"a\\\"\", \"reviews\":50, \"attributes\":{\"breakfast\":false, \"lunch\":true, \"dinner\":true, \"latenight\":true},\"categories\":[\"Restaurant\", \"Bars\"], \"state\":\"WA\", \"city\":\"seattle\"}";
-        byte[] jsonRecord = jsonRecordString.getBytes("UTF-8");
-        String[] expecteds = {
+        final String jsonRecordString = "{\"id\":\"id:\\\"a\\\"\", \"reviews\":50, \"attributes\":{\"breakfast\":false, \"lunch\":true, \"dinner\":true, \"latenight\":true},\"categories\":[\"Restaurant\", \"Bars\"], \"state\":\"WA\", \"city\":\"seattle\"}";
+        final byte[] jsonRecord = jsonRecordString.getBytes("UTF-8");
+        final String[] expecteds = {
                 "{10, 13}",
                 "{1, 4, 6, 11, 14, 15, 18, 26, 32, 43, 46, 56, 65, 71, 79, 86, 94, 104, 112, 123, 126, 137, 140, 145, 149, 155, 157, 160, 163, 168, 170, 178}",
                 "{5, 9, 27, 44, 57, 72, 87, 105, 124, 156, 169}",
