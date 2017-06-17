@@ -26,19 +26,19 @@ class StructuralIndex {
     }
 
     private static BitSet[] buildStructuralCharacterBitmaps(byte[] jsonRecord) {
-        BitSet[] bitmaps = new BitSet[STRUCTURAL_CHARACTER_BYTES.length];
-        for (int i = 0; i < bitmaps.length; i++) {
-            bitmaps[i] = new BitSet(jsonRecord.length);
+        BitSet[] structuralCharacterBitmaps = new BitSet[STRUCTURAL_CHARACTER_BYTES.length];
+        for (int i = 0; i < structuralCharacterBitmaps.length; i++) {
+            structuralCharacterBitmaps[i] = new BitSet(jsonRecord.length);
         }
         for (int i = 0; i < jsonRecord.length; i++) {
             for (int j = 0; j < STRUCTURAL_CHARACTER_BYTES.length; j++) {
                 if (jsonRecord[i] == STRUCTURAL_CHARACTER_BYTES[j]) {
-                    bitmaps[j].set(i);
+                    structuralCharacterBitmaps[j].set(i);
                     break;
                 }
             }
         }
-        return bitmaps;
+        return structuralCharacterBitmaps;
     }
 
 }
